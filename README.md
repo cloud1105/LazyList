@@ -8,12 +8,12 @@ Originally published <a href="http://stackoverflow.com/questions/541966/android-
 
 ## Basic Usage
 
-We recommend to create your view and implements the ImageProcessingCallback there, specially for ListView and BaseAdapter. Check the ".impl" package.
+We recommend to create your view and implement the ImageProcessingCallback there, specially for ListView and BaseAdapter. Check the ".impl" package.
 
 ``` java
 ImageLoader.getInstance().init(getApplicationContext(), "MyExternalFolder");
 ...
-MyView extends RelativeLayout implements ImageProcessingCallback {
+public class MyItemView extends LinearLayout implements ImageProcessingCallback {
 ...
 //Do what you need in methods onImagePreProcessing() and onImageProcessing(Bitmap bitmap)
 ...
