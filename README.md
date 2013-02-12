@@ -14,7 +14,6 @@ MyView extends RelativeLayout implements ImageProcessingCallback {
 ...
 //Do what you need in methods onImagePreProcessing() and onImageProcessing(Bitmap bitmap)
 ...
-
 ImageLoader.getInstance().displayImage(data[position], myView);
 ```
 Don't forget to add the following permissions to your AndroidManifest.xml:
@@ -23,6 +22,8 @@ Don't forget to add the following permissions to your AndroidManifest.xml:
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
 Now the ImageLoader is a Singleton, so you do not need to check for only one instance. But remember to call the init() method.
+
+Check the ".impl" package to learn how to implement the library, it is very easy.
 
 ## License
 
