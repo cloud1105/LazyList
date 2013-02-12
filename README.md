@@ -8,17 +8,21 @@ Originally published <a href="http://stackoverflow.com/questions/541966/android-
 
 ## Basic Usage
 ``` java
-ImageLoader imageLoader=new ImageLoader(context);
+ImageLoader.getInstance().init(getApplicationContext(), "MyExternalFolder");
 ...
-imageLoader.DisplayImage(url, imageView);
+MyView extends RelativeLayout implements ImageProcessingCallback {
+...
+//Do what you need in methods onImagePreProcessing() and onImageProcessing(Bitmap bitmap)
+...
+
+ImageLoader.getInstance().displayImage(data[position], myView);
 ```
 Don't forget to add the following permissions to your AndroidManifest.xml:
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
-    
-Please create only one instance of ImageLoader and reuse it all around your application. This way image caching will be much more efficient.
+Now the ImageLoader is a Singleton, so you do not need to check for only one instance. But remember to call the init() method.
 
 ## License
 

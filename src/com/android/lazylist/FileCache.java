@@ -1,4 +1,4 @@
-package com.fedorvlasov.lazylist;
+package com.android.lazylist;
 
 import java.io.File;
 import android.content.Context;
@@ -11,6 +11,16 @@ public class FileCache {
         //Find the dir to save cached images
         if (android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED))
             cacheDir=new File(android.os.Environment.getExternalStorageDirectory(),"LazyList");
+        else
+            cacheDir=context.getCacheDir();
+        if(!cacheDir.exists())
+            cacheDir.mkdirs();
+    }
+    
+    public FileCache(Context context, String directory){
+        //Find the dir to save cached images
+        if (android.os.Environment.getExternalStorageState().equals(android.os.Environment.MEDIA_MOUNTED))
+            cacheDir=new File(android.os.Environment.getExternalStorageDirectory(), directory);
         else
             cacheDir=context.getCacheDir();
         if(!cacheDir.exists())

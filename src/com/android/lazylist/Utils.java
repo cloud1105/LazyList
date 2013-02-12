@@ -1,4 +1,4 @@
-package com.fedorvlasov.lazylist;
+package com.android.lazylist;
 
 import java.io.InputStream;
 import java.io.OutputStream;

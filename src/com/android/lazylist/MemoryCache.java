@@ -1,4 +1,4 @@
-package com.fedorvlasov.lazylist;
+package com.android.lazylist;
 
 import java.util.Collections;
 import java.util.Iterator;
