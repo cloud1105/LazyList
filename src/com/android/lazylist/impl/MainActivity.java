@@ -20,7 +20,9 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        ImageLoader.getInstance().init(getApplicationContext(), "MyExternalFolder");
+        ImageLoader.getInstance().init(getApplicationContext());
+//        OR...
+//        ImageLoader.getInstance().init(getApplicationContext(), "MyExternalFolder");
         list=(ListView)findViewById(R.id.list);
         adapter=new LazyAdapter(this, mStrings);
         list.setAdapter(adapter);
