@@ -11,7 +11,10 @@ Originally published <a href="http://stackoverflow.com/questions/541966/android-
 We recommend to create your view and implement the ImageProcessingCallback there, specially for ListView and BaseAdapter. Check the ".impl" package.
 
 ``` java
-ImageLoader.getInstance().init(getApplicationContext(), "MyExternalFolder");
+//To use the default external folder, this folder will be deleted when the app no longer exists.
+ImageLoader.getInstance().init(getApplicationContext());
+//Or to use another folder, use...
+//ImageLoader.getInstance().init(getApplicationContext(), "MyExternalFolder");
 ...
 public class MyItemView extends LinearLayout implements ImageProcessingCallback {
 ...
