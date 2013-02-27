@@ -191,25 +191,19 @@ public class ImageLoader {
 				photoToLoad.imageProcessingCallback.onImageProcessing(bitmap);
 			}
 		}
-		
-		public void recycleBitmap() {
-			if(!bitmap.isRecycled()) {
-				bitmap.recycle();
-				bitmap = null;
-			}
-		}
 	}
 	
-
 
 	public void clearCache() {
 		memoryCache.clear();
 		fileCache.clear();
+		System.gc();
 	}
 	
 
 	public void clearMemoryCache() {
 		memoryCache.clear();
+		System.gc();
 	}
 	
 
