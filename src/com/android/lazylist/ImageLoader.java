@@ -40,23 +40,23 @@ public class ImageLoader {
     }
 
     public void init(Context context) {
-		fileCache = new FileCache(context);
+		fileCache = new FileCache(context.getApplicationContext());
 		executorService = Executors.newFixedThreadPool(5);
 	}
     
     public void init(Context context, int numberOfThreads) {
-		fileCache = new FileCache(context);
+		fileCache = new FileCache(context.getApplicationContext());
 		executorService = Executors.newFixedThreadPool(numberOfThreads);
 	}
     
 	public void init(Context context, String directory) {
-		fileCache = new FileCache(context, directory);
+		fileCache = new FileCache(context.getApplicationContext(), directory);
 		executorService = Executors.newFixedThreadPool(5);
 	}
 	
 	
 	public void init(Context context, String directory, int numberOfThreads) {
-		fileCache = new FileCache(context, directory);
+		fileCache = new FileCache(context.getApplicationContext(), directory);
 		executorService = Executors.newFixedThreadPool(numberOfThreads);
 	}
     
